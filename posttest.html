@@ -1,0 +1,156 @@
+<html>
+    <title>Posttest</title>
+
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+    
+        .topnav {
+            overflow: hidden;
+            background-color: #f3f3f3;
+        }
+    
+        .topnav a {
+            float: right;
+            color: black;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+            font-size: 17px;
+        }
+    
+        .topnav a:hover {
+            text-decoration-line: underline;
+        }
+    </style>
+
+<div class="topnav">
+    <a href="references.html">References</a>
+    <a style="color: rgb(238, 106, 30);" href="#">Posttest</a>
+    <a href="demo.html">Simulation</a>
+    <a href="procedure.html">Procedure</a>
+    <a href="pretest.html">Pretest</a>
+    <a href="theory.html">Theory</a>
+    <a href="index.html">Aim</a>
+</div>
+<p>
+  <u>  <h1 style="color: rgb(0, 0, 128 ); text-align: center; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif; font-size: 35px;">Detection of Both SA0 and SA1 Faults on a 4-Bit EVEN Parity
+        Checker Circuit <br> </h1> </u>
+        <h1 style="color: rgb(9, 9, 172); text-align: center; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif; font-size: xx-large;"> 
+        Posttest</h1><br>
+
+<div style="padding: 10px; padding-left: 200px; font-size: 15px; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;">
+    <ol>
+        <li>
+        <p>Parity check can usually detect: </p>
+        <input type="radio" id="op1" name="q1" value="op1">
+        <label for="op1">8 bit error</label><br>
+        <input type="radio" id="op2" name="q1" value="op2">
+        <label for="op2">4 bit error</label><br>  
+        <input type="radio" id="op3" name="q1" value="op3">
+        <label for="op3">2 bit error</label><br>
+        <input type="radio" id="op4" name="q1" value="op4">
+        <label for="op4">1 bit error</label><br>
+        </li>
+    
+        <li>
+        <p>Which method of error detection uses only 1 redundant bit per unit of data?</p>
+        <input type="radio" id="op1" name="q2" value="op1">
+        <label for="op1">Checksum</label><br>
+        <input type="radio" id="op2" name="q2" value="op2">
+        <label for="op2">Simple parity check</label><br>  
+        <input type="radio" id="op3" name="q2" value="op3">
+        <label for="op3">Two-dimensional parity check</label><br>
+        <input type="radio" id="op4" name="q2" value="op4">
+        <label for="op4">Cyclic Redundancy Check</label><br>
+        </li>
+    
+        <li>
+        <p>The BCD number 1101111 has ___ parity: </p>
+        <input type="radio" id="op1" name="q3" value="op1">
+        <label for="op1">Even</label><br>
+        <input type="radio" id="op2" name="q3" value="op2">
+        <label for="op2">Odd</label><br>  
+        <input type="radio" id="op3" name="q3" value="op3">
+        <label for="op3">Both even and odd</label><br>
+        <input type="radio" id="op4" name="q3" value="op4">
+        <label for="op4">Undefined</label><br>
+        </li>
+    
+        <li>
+        <p>Applying an exhaustive list of tests on a model is very time-consuming. True or False?</p>
+        <input type="radio" id="op1" name="q4" value="op1">
+        <label for="op1">True</label><br>
+        <input type="radio" id="op2" name="q4" value="op2">
+        <label for="op2">False</label><br>  
+        <input type="radio" id="op3" name="q4" value="op3">
+        <label for="op3">Undefined</label><br>
+        <input type="radio" id="op4" name="q4" value="op4">
+        <label for="op4">None of the above</label><br>
+        </li>
+    
+        <li>
+        <p>Parity codes cannot be used to detect transmission errors in external data buses.</p>
+        <input type="radio" id="op1" name="q5" value="op1">
+        <label for="op1">True</label><br>
+        <input type="radio" id="op2" name="q5" value="op2">
+        <label for="op2">False</label><br>  
+        <input type="radio" id="op3" name="q5" value="op3">
+        <label for="op3">Undefined</label><br>
+        <input type="radio" id="op4" name="q5" value="op4">
+        <label for="op4">None of the above</label><br>
+        </li>
+        </ol>
+        <br>
+        <input type='button' id='submit' value="Submit" style="position: absolute; left: 250px" onclick="checkScore()">
+        <br>
+        <table id="score" style="position:absolute; left: 250px; font-size: medium; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;">
+        </table>
+        <br><br><br>
+    </div>
+    
+    <script>
+    function checkScore() {
+        var score = 0;
+    
+        var a1 = document.querySelector('input[name="q1"]:checked');
+        var a2 = document.querySelector('input[name="q2"]:checked');
+        var a3 = document.querySelector('input[name="q3"]:checked');
+        var a4 = document.querySelector('input[name="q4"]:checked');
+        var a5 = document.querySelector('input[name="q5"]:checked');
+    
+        if(a1!=null && a1.value == "op4") {
+            score += 1;
+        }
+        
+        if(a2!=null && a2.value == "op2") {
+            score += 1;
+        }
+    
+        if(a3!=null && a3.value == "op1") {
+            score += 1;
+        }
+    
+        if(a4!=null && a4.value == "op1") {
+            score += 1;
+        }
+    
+        if(a5!=null && a5.value == "op2") {
+            score += 1;
+        }
+    
+        var table = document.getElementById("score");
+        table.innerHTML = '';
+        var row = table.insertRow();
+    
+        var c0 = document.createElement('td');
+        c0.style.width = '200px';
+        c0.innerHTML = "Score = " + score + "/5";
+        row.appendChild(c0);
+    }   
+    
+</script>
+</html>
+    

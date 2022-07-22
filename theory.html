@@ -1,0 +1,88 @@
+<html>
+    <title>Theory</title>
+
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+    
+        .topnav {
+            overflow: hidden;
+            background-color: #f3f3f3;
+        }
+    
+        .topnav a {
+            float: right;
+            color: black;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+            font-size: 17px;
+        }
+    
+        .topnav a:hover {
+            text-decoration-line: underline;
+        }
+    </style>
+    
+    <div class="topnav">
+        <a href="references.html">References</a>
+        <a href="posttest.html">Posttest</a>
+        <a href="demo.html">Simulation</a>
+        <a href="procedure.html">Procedure</a>
+        <a href="pretest.html">Pretest</a>
+        <a style="color: rgb(238, 106, 30);" href="#">Theory</a>
+        <a href="index.html">Aim</a>
+    </div>
+<p>
+ <u> <h1 style="color: rgb(0, 0, 128 ); text-align: center; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif; font-size: 35px;">Detection of Both SA0 and SA1 Faults on a 4-Bit EVEN Parity
+        Checker Circuit <br> </h1> </u>
+        <h1 style="color: rgb(9, 9, 172); text-align: center; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif; font-size: xx-large;"> 
+        Theory</h1><br>
+
+<p style="padding-left: 30px; padding-top: 50px; font: 1em sans-serif; font-size: large; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif; line-height: 35px;">
+    <b style="font-size: 30px;">Introduction</b><br>
+    One of the most widely used error detection techniques for transmission of data for sharing information between devices is <i><b>Parity checking.</b></i><br>
+    The Parity Checker matches the number of 1s at the receiver's end with that of the transmitter's end to check for errors. If there is a change in the number of 1s at the receiving end, then that detects the presence of an error. Since the data is transmitted with even parity, there must be an even number of 1s.<br><br>
+    <b style="font-size: 25px;">4-Bit EVEN Parity Checker</b><br>
+    Consider that three input message along with even parity bit is generated at the transmitting end. These 4 bits are applied as input to the parity checker circuit, which checks the possibility of error on the data.<br><br>
+    <img style="width: 650px; margin-left: auto; margin-right: auto; display: block" src="images/circuitdiagram.jpg">
+    <div style="padding-left: 580px; font: 1em sans-serif; font-size: large; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif; line-height: 35px; font-size: 15px;">Fig.1: Logic diagram of a 4-bit even parity checker.<br><br></div>
+</p>
+
+<p style="padding-left: 30px; padding-top: 0px; font: 1em sans-serif; font-size: large; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif; line-height: 35px;">
+    If any error occurs, the received message consists of odd number of 1s. The output of the parity checker is denoted by PEC (Parity Error Check).<br>
+    The below table shows the truth table for the Even Parity Checker in which PEC = 1 if the error occurs, i.e., the four bits received have odd number of 1s and PEC = 0 if no error occurs, i.e., if the 4-bit message has even number of 1s.<br>
+    <img style="width: 420px; margin-left: auto; margin-right: auto; display: block" src="images/truthTable.jpg">
+    <div style="padding-left: 600px; font: 1em sans-serif; font-size: large; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif; line-height: 35px; font-size: 15px;">Table 1: Truth Table of a 4-bit even parity checker.<br></div>
+</p>
+
+<p style="padding-left: 30px; padding-top: 0px; font: 1em sans-serif; font-size: large; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif; line-height: 35px;">
+    The boolean expression for the Parity Error Check, C is as follows: C = x <img style="width: 12px;" src="images/xor.jpg"> y <img style="width: 12px;" src="images/xor.jpg"> z <img style="width: 12px;" src="images/xor.jpg"> P <br><br>
+    <b style="font-size: 25px;">Stuck-at Fault</b><br>
+    The most common model used for logical faults is the single stuck-at fault. Here we assume that some of the circuit lines are permanently fixed at logic-0 or logic-1 due to some failures. This line may be an input or output to any gate. Stuck-at Fault is a Functional Fault on a Boolean (Logic) Function Implementation.<br>
+    It is not a physical defect mode. Stuck-at 1 does not mean line is shorted to VDD. Stuck-at 0 does not mean line is grounded. It is an abstract fault model.  A logic stuck-at 1 means when the line is applied a logic 0, it produces a logical error. A logic error means 0 becomes 1 or vice versa.<br><br>
+
+    <b style="font-size: 25px;">Advantages</b><br>
+    <ol style="padding-left: 50px; padding-top: 0px; font: 1em sans-serif; font-size: large; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif; line-height: 35px;">
+        <li>Test developed for a single stuck-at fault often finds a large number of other stuck-at faults.</li>
+        <li>A series of tests for stuck-at faults will often find a large number of other faults, such as stuck-open faults. This is sometimes called "windfall" fault coverage.</li>
+        <li>Parity codes are also commonly used for detecting transmission errors in the external address and data buses.</li>
+        <li>As in the case of hardware, the goal of fault detection in software is to determine if a fault has occurred within a system. Single-version fault tolerance techniques usually use various types of acceptance tests to detect faults.</li>
+    </ol><br>
+</p>
+
+<p style="padding-left: 30px; padding-top: 0px; font: 1em sans-serif; font-size: large; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif; line-height: 35px;">
+
+    <b style="font-size: 25px;">Disadvantages</b><br>
+    <ol style="padding-left: 50px; padding-top: 0px; font: 1em sans-serif; font-size: large; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif; line-height: 35px;">
+        <li>Circuit complexity and the test time to apply an exhaustive list of tests became too time consuming.</li>
+        <li>Completely testing by applying all possible inputs and checking that they give the right outputs, is completely impractical: an adder to add two 32-bit numbers would require 2<sup>64</sup>= 1.8*10<sup>19</sup> tests, taking 58 years at 0.1 ns/test.</li>
+        <li>While the same testing model works moderately well for CMOS, it is not able to detect all possible CMOS faults. This is because CMOS may experience a failure mode known as a stuck-open fault.</li>
+    </ol><br><br>
+
+</p>
+
+</p>
+</html>
